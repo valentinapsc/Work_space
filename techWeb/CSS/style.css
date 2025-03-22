@@ -1,0 +1,80 @@
+/* 1. The header should have a blue background and white text */
+header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 2. Navbar styling with light grey background and dash-separated links */
+nav {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+}
+
+nav span {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 0 5px;
+}
+
+nav span:not(:last-child)::after {
+    content: " - ";
+}
+
+/* 3. Styling for the Paragraphs section */
+/* Highlight <span> with class 'master' in bold and blue */
+.master {
+    font-weight: bold;
+    color: blue;
+}
+
+/* Highlight <em> after .master in bold and red */
+.master + em {
+    font-weight: bold;
+    color: red; 
+}
+
+/* All other <em> elements should be green and underlined */
+p.text em {
+    color: green;
+    text-decoration: underline;
+}
+
+/* 4. Links that open in a new tab should be prefixed with a right-arrow emoji */
+a[target="_blank"]::before {
+    content: "↗️ ";
+}
+
+/* 5. Links that lead to external pages (starting with "http") should report "(ext.)" */
+a[href^="http"]::after {
+    content: " (ext.)";
+}
+
+/* 6. List items should follow the Italian flag colors (green, white, red) */
+.italist li:nth-child(3n+1) {
+    color: green;
+}
+.italist li:nth-child(3n+2) {
+    color: white;
+}
+.italist li:nth-child(3n) {
+    color: red;
+}
+
+/* 7. Fixing the chessboard */
+/* Override the inline style for table cells */
+#chess td {
+    background-color: white !important;
+}
+
+/* Set alternating black cells for the chessboard */
+#chess tr:nth-child(even) td:nth-child(odd),
+#chess tr:nth-child(odd) td:nth-child(even) {
+    background-color: black !important;
+}

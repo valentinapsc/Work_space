@@ -1,0 +1,5 @@
+# Start from a base nginx image
+FROM nginx:1.25.4
+
+# Copy the website directory into /usr/share/nginx/html
+COPY . /usr/share/nginx/html
