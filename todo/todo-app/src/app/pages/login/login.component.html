@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- login.component.html -->
+<mat-card class="login-card">
+  <mat-card-title class="login-title">LogIn</mat-card-title>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-container">
+    
+    <mat-form-field appearance="fill" class="custom-input">
+      <mat-label>Username*</mat-label>
+      <input matInput formControlName="username" placeholder="Inserisci username">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="custom-input">
+      <mat-label>Password*</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Inserisci password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="btn-login" type="submit" [disabled]="loginForm.invalid">
+      Accedi
+    </button>
+
+    <div class="register-link">
+      <a (click)="onRegister()">Registrati</a>
+    </div>
+
+<img src="/assets/cat.png" alt="" class="decorative-image">
+
+  </form>
+</mat-card>
+
+  

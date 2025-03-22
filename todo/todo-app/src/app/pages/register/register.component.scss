@@ -1,0 +1,79 @@
+.login-card {
+    max-width: 400px !important;
+    width: 100% !important;
+    margin: auto !important;
+    margin-top: 5vh !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  
+  .login-title {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .form-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  .custom-input {
+    width: 100% !important;
+  
+    .mat-form-field-flex {
+      background-color: #ffedd5 !important;
+      border-radius: 10px !important;
+    }
+  
+    input {
+      font-size: 1rem !important;
+      padding-left: 8px !important;
+    }
+  }
+  
+  .btn-login {
+    background-color: #8b4513 !important;
+    color: white !important;
+    padding: 0.8rem !important;
+    font-size: 1rem !important;
+    border-radius: 12px !important;
+  
+    &:hover {
+      background-color: #783c11 !important;
+    }
+  }
+  
+  .register-link {
+    margin-top: 1rem !important;
+    font-size: 1rem !important;
+  
+    a {
+      color: #000 !important;
+      cursor: pointer !important;
+      text-decoration: underline !important;
+      font-weight: 500 !important;
+  
+      &:hover {
+        color: #8b4513 !important;
+      }
+    }
+  }
+  
+  .decorative-image {
+    width: 40px !important;
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+  

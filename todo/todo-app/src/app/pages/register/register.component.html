@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<mat-card class="login-card">
+    <mat-card-title class="login-title">Registrati</mat-card-title>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-container">
+      
+      <mat-form-field appearance="fill" class="custom-input">
+        <mat-label>Username*</mat-label>
+        <input matInput formControlName="username" placeholder="Inserisci username">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="custom-input">
+        <mat-label>Password*</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Inserisci password">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" class="btn-login" type="submit" [disabled]="registerForm.invalid">
+        Registrati
+      </button>
+  
+      <div class="register-link">
+        <a (click)="onLogin()">Hai già un account? Accedi</a>
+      </div>
+      
+  
+      <img src="/assets/cat.png" alt="" class="decorative-image"/>
+  
+    </form>
+  </mat-card>
+  

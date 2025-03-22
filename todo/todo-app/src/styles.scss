@@ -1,0 +1,12 @@
+html, body, app-root, mat-sidenav-container, mat-sidenav-content {
+    height: 100%;
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: url('assets/wp.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+  }
+  
