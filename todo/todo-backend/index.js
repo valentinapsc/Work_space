@@ -11,4 +11,5 @@ app.use(express.json());
 app.use('/auth', authRoutes);
 app.use('/todos', todosRoutes);
 
-app.listen(process.env.PORT, () => console.log(`Server su port ${process.env.PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server su port ${PORT}`));
