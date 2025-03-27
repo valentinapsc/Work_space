@@ -5,12 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
+     * Metodo di supporto per definire le associazioni.
+     * Questo metodo non fa parte del ciclo di vita di Sequelize.
+     * Il file `models/index` chiamerà questo metodo automaticamente.
      */
     static associate(models) {
-      // define association here
+      // definire le associazione
     }
   }
   User.init({
