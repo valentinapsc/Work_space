@@ -65,6 +65,13 @@
     <h1>🐱 Cat Snake Game 🐟</h1>
     <button id="start-btn">Start</button>
     <main id="snake-container"></main>
+    
     <div id="game-over"></div>
+
+    <script>
+      document.getElementById("start-btn").addEventListener("click", () => {
+        setupGame("snake-container");
+      });
+    </script>
   </body>
 </html>

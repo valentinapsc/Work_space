@@ -41,9 +41,17 @@ function setupGame(containerId) {
     { x: 0, y: 0 }
   ];
 
-  let food = randomPosition(CELL_SIZE);
+  let food = generateFood();
   let score = 0;
   let gameOver = false;
+
+  function generateFood() {
+    let newFood;
+    do {
+      newFood = randomPosition(CELL_SIZE); // ✅ usa la funzione giusta
+    } while (snake.some(part => part.x === newFood.x && part.y === newFood.y));
+    return newFood;
+  }  
 
   function draw() {
     for (let row of grid) {
@@ -104,10 +112,10 @@ function setupGame(containerId) {
     // Check cibo
     if (head.x === food.x && head.y === food.y) {
       score++;
-      food = randomPosition(CELL_SIZE);
+      food = generateFood();
     } else {
-      snake.pop(); // rimuovo la coda
-    }
+      snake.pop();
+    }    
 
     draw();
   }
