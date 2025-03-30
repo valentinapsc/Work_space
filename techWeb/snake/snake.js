@@ -1,7 +1,8 @@
-const CELL_SIZE = 20; // numero di celle per riga/colonna (griglia quadrata)
+const CELL_SIZE = 20; // numero di celle per riga/colonna
 const DELAY = 100; // ms
 let direction = "right";
 let gameInterval;
+let gameStarted = false;
 
 function createGrid(container, size) {
   const table = document.createElement("table");
@@ -30,6 +31,8 @@ function randomPosition(size) {
 
 function setupGame(containerId) {
   const container = document.getElementById(containerId);
+  document.getElementById("game-over").textContent = "";
+  container.innerHTML = ""; // reset
   const grid = createGrid(container, CELL_SIZE);
 
   let snake = [
@@ -40,6 +43,7 @@ function setupGame(containerId) {
 
   let food = randomPosition(CELL_SIZE);
   let score = 0;
+  let gameOver = false;
 
   function draw() {
     for (let row of grid) {
@@ -53,6 +57,8 @@ function setupGame(containerId) {
     foodImg.src = "fish.png";
     foodImg.style.width = "100%";
     foodImg.style.height = "100%";
+    foodImg.style.objectFit = "contain";
+    foodImg.style.display = "block";
     grid[food.y][food.x].appendChild(foodImg);
   
     // Serpente
@@ -62,6 +68,8 @@ function setupGame(containerId) {
       img.src = i === 0 ? "cat-head.png" : "cat-body.png";
       img.style.width = "100%";
       img.style.height = "100%";
+      img.style.objectFit = "contain";
+      img.style.display = "block";
       grid[part.y][part.x].appendChild(img);
     }
   }  
@@ -105,9 +113,12 @@ function setupGame(containerId) {
   }
 
   function endGame(message) {
+    if (gameOver) return;
+    gameOver = true;
     clearInterval(gameInterval);
-    alert(`Game over! ${message} Your score: ${score}`);
-  }
+    const msg = document.getElementById("game-over");
+    msg.textContent = `💀 Game Over: ${message} | Score: ${score}`;
+  }  
 
   document.addEventListener("keydown", (e) => {
     const keyMap = {
@@ -135,4 +146,11 @@ function setupGame(containerId) {
   gameInterval = setInterval(move, DELAY);
 }
 
-setupGame("snake-container");
+document.getElementById("start-btn").addEventListener("click", () => {
+  if (gameInterval) {
+    clearInterval(gameInterval);
+  }
+  direction = "right";
+  gameStarted = true;
+  setupGame("snake-container");
+});

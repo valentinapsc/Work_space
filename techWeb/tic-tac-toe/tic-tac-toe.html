@@ -7,12 +7,58 @@
       html {
         font-family: sans-serif;
       }
-      td {
-        width: 5rem; height: 5rem;
-        border: 2px solid;
-        text-align: center;
-        font-size: 3rem;
+      table {
+        margin: 1rem auto;
+        border-collapse: collapse;  
       }
+
+      td {       
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid #333;
+        text-align: center;
+        vertical-align: middle;
+        background-color: #fdf7f0;
+        transition: background 0.3s ease;
+      }
+
+      td:hover {       
+        background-color: #ffeccc;
+        cursor: pointer;
+      }
+
+      .symbol-img {      
+        width: 4rem;
+        height: 4rem;
+        animation: pop 0.3s ease;
+      }
+
+      @keyframes pop {
+        from {
+          transform: scale(0.4);
+          opacity: 0;
+        }
+        to {
+        transform: scale(1);
+        opacity: 1;
+        }
+      }
+
+      .restart-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+        border: none;
+        background-color: #ffb347;
+        color: white;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+
+      .restart-btn:hover {
+        background-color: #ffa726;
+      }
+
     </style>
     <script src="tic-tac-toe.js"></script>
   </head>
